@@ -1,0 +1,37 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<!--
+BİR CLASS'DA TUM TEST METHOD'LARI CALISACAKSA BUNUN İCİN DİREK CLASS SECMEK YETERLİDİR
+METHOD SECMEMİZİN TEMEL AMACI CLASS İCERİSİNDE SADECE BELİRLENEN METHODLARIN CALISMASI
+VEYA BELİRLENEN METHODLAR DISINDAKİ TUM METHODLARIN CALISMASIDIR
+
+EGER CALISACAK SPESİFİK METHOD'LARI BELİRTMEK İSTERSEK inclusive
+CALISMAYACAK SPESİFİK METHOD'LARI BELİRTMEK İSTERSEK exclusive KEYWORD'LERİ KULLANILIR
+
+inclusive SADECE CALISACAK METHODU İFADE EDER.
+exclusive SADECE CALISMAYACAK METHODU İFADE EDER.
+
+<exclude name="amazon"></exclude>
+<exclude name="techproeducation"></exclude>
+
+
+SORU: C01_Priority class'ındaki, bestbuy methodunu calıstırınız
+
+-->
+
+
+
+
+<suite name="istenen methodlari calistirma">
+
+    <test name="methodlar">
+
+        <classes>
+            <class name="tests.day01.C01_Priority">
+                <methods>
+                    <include name="bestbuy"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

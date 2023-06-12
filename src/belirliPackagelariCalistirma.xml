@@ -1,0 +1,38 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<!--
+EGER İSTEDİGİMİZ TUM TESTLERE ULASMAK İCİN BİRDEN FAZLA HİYERARSİ OLUSTURMAMIZ GEREKİRSE
+SONRAKİ HİYERARSİLERİ, UYGUN ADIMDAN BASLATMAMIZ GEREKİR.
+
+
+SORU: day02 package'ını ve
+
+      C01_Priority class'ını
+
+      xml dosyasında calıstırınız
+
+-->
+
+
+
+
+<suite name="istenen packagelari calistirma">
+
+
+    <test name="packagelar">
+        <packages>
+            <package name="tests.day02"></package>
+        </packages>
+    </test>
+
+
+    
+    <test name="classlar">
+        <classes>
+            <class name="tests.day01.C01_Priority"></class>
+        </classes>
+    </test>
+    
+    
+
+</suite>
