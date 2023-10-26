@@ -7,10 +7,10 @@ import org.testng.annotations.Test;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class C07_ReadExcel {
+public class C03_ReadExcel {
 
    // Ulkeler dosyasındaki tum dataları map'a alınız ve yazdırınız
 
@@ -20,7 +20,7 @@ public class C07_ReadExcel {
 
    // ULKELER DOSYASINDAKİ TUM VERİLERİ KOYABİLECEGİMİZ EN UYGUN JAVA OBJESİ MAP'DİR
 
-        Map<String,String> ulkelerMap = new HashMap<>();
+        Map<String,String> ulkelerMap = new LinkedHashMap<>();
 
         String dosyaYolu = "src/resources/ulkeler.xlsx";
 
@@ -48,11 +48,11 @@ public class C07_ReadExcel {
 
 
             // VALUE İSE i. SATIRDAKİ 1,2,3. INDEXDEKİ DATALARIN BİRLESİMİ OLACAK
-            String value = workbook.getSheet("Sayfa1").getRow(i).getCell(1).toString() + " - "
-                    + workbook.getSheet("Sayfa1").getRow(i).getCell(2).toString() + " - "
+            String value = workbook.getSheet("Sayfa1").getRow(i).getCell(1).toString() + ", "
+                    + workbook.getSheet("Sayfa1").getRow(i).getCell(2).toString() + ", "
                     + workbook.getSheet("Sayfa1").getRow(i).getCell(3).toString();
 
-            ulkelerMap.put(key,value);
+            ulkelerMap.put(key,value + "\n");
 
             // System.out.println(key + " /" + value);
         }

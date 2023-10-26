@@ -9,7 +9,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class C08_WriteExcel {
+public class C04_WriteExcel {
 
     @Test
     public void test01() throws IOException {
@@ -34,7 +34,7 @@ public class C08_WriteExcel {
 
 
         // 1.satır indexin, 4. hucre indexine yeni bir cell olusturun
-        // olusturdugunuz huıcreye "15000" yazdırın
+        // olusturdugunuz hucreye "15000" yazdırın
 
         // workbook.getSheet("Sayfa1").getRow(1).createCell(4).setCellValue(150000);
 

@@ -1,5 +1,6 @@
 package tests.day01;
 
+import org.openqa.selenium.Keys;
 import pages.FacebookPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -12,10 +13,10 @@ public class C04_PageClassKullanimi {
     // kullanıcı email kutusuna rastgele bir isim yazın
     // kullanıcı sifre kutusuna rastgele bir password yazın
     // giris yap butonuna tıklayın
-    // girdigin sifre yanlıs yazı elementinin, gorunur oldugunu test edin
+    // lutfen bu hesabı baska sekilde tanımla yazı elementinin, gorunur oldugunu test edin
     // sayfayı kaptın
 
-    @Test
+    @Test(groups = "grup1")
     public void test01() {
 
         // facebook anasayfaya gidin
@@ -31,12 +32,15 @@ public class C04_PageClassKullanimi {
         // kullanıcı sifre kutusuna rastgele bir password yazın
         facebookPage.sifreKutusu.sendKeys("123456");
 
+
+
         // giris yap butonuna tıklayın
         facebookPage.giriYapButonu.click();
+        //  facebookPage.emailKutusu.sendKeys("Ahmet", Keys.TAB,"123456",Keys.ENTER);
 
 
-        // girdigin sifre yanlıs yazı elementinin, gorunur oldugunu test edin
-        Assert.assertTrue(facebookPage.girdiginSifreYanlisYaziElementi.isDisplayed());
+        // lutfen bu hesabı baska sekilde tanımla yazı elementinin, gorunur oldugunu test edin
+        Assert.assertTrue(facebookPage.baskaSekildeTanimlaYaziElementi.isDisplayed());
 
         // sayfayı kaptın
         Driver.closeDriver();

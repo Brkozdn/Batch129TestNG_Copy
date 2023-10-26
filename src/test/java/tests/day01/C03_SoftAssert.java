@@ -1,29 +1,49 @@
 package tests.day01;
 
-import utilities.TestBase;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeMethod;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class C03_SoftAssert extends TestBase {
+import java.time.Duration;
+
+public class C03_SoftAssert {
 
     // "https://amazon.com" sayfasına gidiniz
     /// Title'in "Amazon" icerdigini test edin
     /// Arama kutusunun erisilebilir oldugunu test edin
-    // Arama kutusuna nutella yazıp aratın
+    // Arama kutusuna Nutella yazıp aratın
     /// Sonuc yazısının gorunur oldugunu test edin
     /// Sonuc yazısının "Nutella" icerdigini test edin
 
-    // test islemlerini softAsser ile yapınız ve hatalar icin mesaj versin
+    // test islemlerini softAssert ile yapınız ve hatalar icin mesaj versin
+
+
+
+    WebDriver driver;
+
+    @BeforeMethod
+    public void setUp() {
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
+    }
+
+
 
 
     @Test
     public void test01() {
 
         /*
-        Junit'te Assert KULLANIRSAK Assert FAİLD OLDUGU ANDA TEST CALISMAYI DURDURUYOR. VE GERİ KALANINI CALISTIRMIYORDU.
+        Junit'te Assert KULLANDIGIMIZDA Assert FAİLD OLDUGU ANDA TEST CALISMAYI DURDURUYOR. VE GERİ KALANINI CALISTIRMIYORDU.
 
         TestNG'de HEM Assert, HEM softAssert YAPILARI VAR.
 
@@ -50,7 +70,7 @@ public class C03_SoftAssert extends TestBase {
 
         String amazonTitle = driver.getTitle();
 
-        softAssert.assertTrue(amazonTitle.contains("RAmazon1"),"TİTLE AMAZON İCERMİYOR");
+        softAssert.assertTrue(amazonTitle.contains("Amazon"),"TİTLE AMAZON İCERMİYOR");
 
 
 
@@ -89,7 +109,7 @@ public class C03_SoftAssert extends TestBase {
 
 
         /// Sonuc yazısının "Nutella" icerdigini test edin
-        softAssert.assertTrue(sonucYazisi.getText().contains("Kutella"),"SONUC YAZISI Nutella İCERMİYOR");
+        softAssert.assertTrue(sonucYazisi.getText().contains("Nutella"),"SONUC YAZISI Nutella İCERMİYOR");
 
 
 
@@ -98,6 +118,17 @@ public class C03_SoftAssert extends TestBase {
 
          softAssert.assertAll();
         // assertAll() YAZIP TUM HATALARI LİSTELEMESİNİ İSTEMELİYİZ. AKSİ HALDE HATA VERMEZ.
+
+
+
+        /*
+        Junit'te Assert KULLANDIGIMIZDA Assert FAİLD OLDUGU ANDA TEST CALISMAYI DURDURUYOR. VE GERİ KALANINI CALISTIRMIYORDU.
+
+        TestNG'de HEM Assert, HEM softAssert YAPILARI VAR.
+
+        TEST SONUNA KADAR CALISSIN, TEST'İN SONUNDA TUM HATALARI LİSTELESİN İSTİYORSAK softAssert KULLANIRIZ.
+
+         */
 
 
         // softAssert'un HATA BULSA BİLE CALISMAYA DEVAM ETME OZELLİGİ softAssert.assertAll()'a KADARDIR.

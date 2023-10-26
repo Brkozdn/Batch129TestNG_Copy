@@ -10,6 +10,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utilities.ReusableMethods;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,7 +27,7 @@ public class C01_PageClassKullanimi {
     // title'ının "ASUS" icerdigini test edin
     // sayfayı kapatın
 
-    @Test
+    @Test(groups = "grup1")
     public void test01() throws IOException {
 
         // amazon sayfasına gidin
@@ -57,6 +58,9 @@ public class C01_PageClassKullanimi {
         File gecici = amazonPage.ikinciUrun.getScreenshotAs(OutputType.FILE);
 
         FileUtils.copyFile(gecici,kayit);
+
+
+
 
 
 

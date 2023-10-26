@@ -1,5 +1,6 @@
 package tests.day02;
 
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WindowType;
 import org.testng.Assert;
@@ -7,9 +8,13 @@ import org.testng.annotations.Test;
 import pages.AmazonPage;
 import utilities.ConfigReader;
 import utilities.Driver;
-import utilities.TestBaseRapor;
+import utilities.ReusableMethods;
 
-public class C02_Raporlama extends TestBaseRapor {
+import static utilities.ReusableMethods.extentTest;
+
+public class C05_Raporlama {
+
+
 
     // 'https://www.amazon.com' adresine gidin
     // arama kutusuna "Java" yazip aratın
@@ -21,15 +26,32 @@ public class C02_Raporlama extends TestBaseRapor {
 
     // test raporu alınız
 
+    /*
+    pom.xml'e BU DEPENDENCY YAPISTIR.
+
+            <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>4.0.9</version>
+        </dependency>
+
+    */
+
+
     @Test
     public void test01() {
 
-        extentTest=extentReports.createTest("testname","tanim");
+        ReusableMethods.rapor("Chrome","SmokeTest");
+
+        extentTest = ReusableMethods.extentReport.createTest("Amazon Test","Test Raporu");
+        // extentTest'e TESTNAME VE DESCRİPTİON DEGERLERİNİ ATAYALIM
 
 
         // 'https://www.amazon.com' adresine gidin
         Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
-        extentTest.pass("AMAZON SAYFASINA GİDİLDİ");
+        extentTest.info("AMAZON SAYFASINA GİDİLDİ");
+        // BİLGİ VERİLMESİNİ İSTEDİGİMİZ HER SATIRDA extentTest.info() SEKLİNDE ACIKLAMA EKLİYORUZ
 
 
 
@@ -40,7 +62,7 @@ public class C02_Raporlama extends TestBaseRapor {
         AmazonPage amazonPage = new AmazonPage();
 
         amazonPage.aramaKutusu.sendKeys("Java" + Keys.ENTER);
-        extentTest.pass("ARAMA KUTUSUNA JAVA YAZIP ARATILDI");
+        extentTest.info("ARAMA KUTUSUNA JAVA YAZIP ARATILDI");
 
 
 
@@ -48,12 +70,14 @@ public class C02_Raporlama extends TestBaseRapor {
         // sonuc yazisinin "Java" icerdigini test edin
         Assert.assertTrue(amazonPage.sonucYazisi.getText().contains("Java"));
         extentTest.pass("SONUC YAZISININ JAVA İCERDİGİ TEST EDİLDİ");
+        // ASSERTİON YAPARKEN GECTİ DEMEK İCİN extentTest.pass() KULLANIYORUZ
+
 
 
 
         // kontrollu olarak yeni bir sayfa acın
         Driver.getDriver().switchTo().newWindow(WindowType.TAB);
-        extentTest.pass("KONTROLLU YENİ SAYFA ACILDI");
+        extentTest.info("KONTROLLU YENİ SAYFA ACILDI");
 
 
 
@@ -62,7 +86,7 @@ public class C02_Raporlama extends TestBaseRapor {
         Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
 
         amazonPage.aramaKutusu.sendKeys("Kitap" + Keys.ENTER);
-        extentTest.pass("YENİ ACILAN SAYFADA KİTAP ARATILDI");
+        extentTest.info("YENİ ACILAN SAYFADA KİTAP ARATILDI");
 
 
 
@@ -71,10 +95,16 @@ public class C02_Raporlama extends TestBaseRapor {
         // sonuc yazisinin Kitap icerdigini test edin
         Assert.assertTrue(amazonPage.sonucYazisi.getText().contains("Kitap"));
         extentTest.pass("SONUC YAZISININ KİTAP İCERDİGİ TEST EDİLDİ");
+        // ASSERTİON YAPARKEN GECTİ DEMEK İCİN extentTest.pass() KULLANIYORUZ
+
+
+        ReusableMethods.extentReport.flush();
 
 
         // sayfayı kapatınız
-       // Driver.closeDriver();
+        Driver.closeDriver();
 
     }
 }
+
+

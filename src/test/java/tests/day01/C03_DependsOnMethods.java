@@ -7,13 +7,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.time.Duration;
 
-public class C02_DependsOnMethods {
+public class C03_DependsOnMethods {
 
 
     // test01 isimli bir test methodu olusturunuz. Ve amazona gidiniz
@@ -34,6 +32,7 @@ public class C02_DependsOnMethods {
 
     WebDriver driver;
 
+
     @BeforeClass
     public void beforeClass() {
         WebDriverManager.chromedriver().setup();
@@ -48,6 +47,8 @@ public class C02_DependsOnMethods {
     public void afterClass() {
         driver.close();
     }
+
+
 
 
 

@@ -10,22 +10,21 @@ TEST HİYERARSİSİNE UYGUN OLARAK CALISACAK TUM TESTLERİ XML FORMATINDA YAZMAK
 
 
 
-SORU: C01_PageClassKullanimi ve C03_NegativeLoginDataProvider classlarını xml dosyasında calıstırınız
+SORU: C01_Priority ve C03_NegativeLoginDataProvider classlarını xml dosyasında calıstırınız
 -->
 
 
 
 
-<suite name="istenen classlari calistirma">
+<suite name="belirli classlari calistirma">
 
     <test name="classlar">
 
         <classes>
-            <class name="tests.day02.C01_PageClassKullanimi"></class>
+            <class name="tests.day01.C01_Priority"></class>
             <class name="tests.day02.C03_NegativeLoginDataProvider"></class>
         </classes>
+
     </test>
-
-
 
 </suite>

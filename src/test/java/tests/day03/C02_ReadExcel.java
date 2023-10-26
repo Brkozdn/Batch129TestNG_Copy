@@ -1,6 +1,5 @@
 package tests.day03;
 
-
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.testng.annotations.Test;
@@ -9,7 +8,7 @@ import org.testng.annotations.Test;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class C06_ReadExcel {
+public class C02_ReadExcel {
 
     // Ulkeler dosyasındaki "Başkent (İngilizce)" sutunun yazdırınız
 
@@ -33,7 +32,7 @@ public class C06_ReadExcel {
         System.out.println(sonSatirIdx);
         // getLastRowNum SON SATIR NUMARASINI İNDEX OLARAK VERİR
 
-
+/*
         for (int i = 0; i <=sonSatirIdx ; i++) {
 
 
@@ -43,9 +42,17 @@ public class C06_ReadExcel {
 
         }
 
+ */
 
 
+        for (int i = 0; i <=sonSatirIdx ; i++) {
 
+
+            String satirdakiData = C01_ReadExcel.banaDataGetir(i, 1);
+
+            System.out.println(satirdakiData);
+
+        }
 
 
         }

@@ -15,23 +15,35 @@ exclusive SADECE CALISMAYACAK METHODU İFADE EDER.
 <exclude name="techproeducation"></exclude>
 
 
-SORU: C01_Priority class'ındaki, bestbuy methodunu calıstırınız
+SORU: C01_Priority class'ındaki, bestbuy methodunu
+      C01_PageClassKullanimi class'ındaki, test01 methodunu
+calıstırınız
 
 -->
 
 
-
-
-<suite name="istenen methodlari calistirma">
+<suite name="belirli methodlari calistirma">
 
     <test name="methodlar">
 
         <classes>
+
             <class name="tests.day01.C01_Priority">
                 <methods>
                     <include name="bestbuy"></include>
                 </methods>
             </class>
+
+
+            <class name="tests.day02.C01_PageClassKullanimi">
+                <methods>
+                    <include name="test01"></include>
+                </methods>
+            </class>
+
+
         </classes>
+
     </test>
+
 </suite>

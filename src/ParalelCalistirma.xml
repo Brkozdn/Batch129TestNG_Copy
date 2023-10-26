@@ -1,0 +1,41 @@
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--
+PARALEL TEST İSLEMİNDE DRİVER'A DİKKAT EDİLMELİDİR.
+NORMAL DRİVER CLASS'I KULLANILMAMALIDIR.
+
+SUİT TAG'INDA HANGİ SEVİYEDE PARALEL TEST YAPILACAGI VE KAC BROWSER KULLANILACAGI BELİRTİLİR.
+parallel="methods" (METHOD SEVİYESİNDE PARALEL TEST)
+parallel="classes" (CLASS SEVİYESİNDE PARALEL TEST)
+
+thread-count="4" (PARALEL TEST'TE KAC TANE BROWSER KULLANACAGINI İFADE EDER)
+
+
+
+
+BU ÖRNEKTE; HERBİR CLASS'DA 2 TANE METHOD VAR. YANİ TOPLAM 4 TANE METHOD VAR.
+parallel="methods" YAPIP thread-count="4" YAPARSAK 4 BROWSER CALISIR.
+
+FAKAT
+
+parallel="classes" YAPIP thread-count="4" YAPARSAK 2 BROWSER CALISIR.
+(CUNKU 2 CLASS OLDUGUNDAN 4 TANE DEGİL 2 TANE BROWSER CALISIR)
+(METHODLARIN HEPSİ İCİN YİNE CALISIR)
+
+-->
+
+<suite name="All Test Suite" parallel="methods" thread-count="4">
+    
+    
+    <test name="Paralel Calistirma">
+        
+        <classes>
+            <class name="tests.day02.C06_ParalelTest"></class>
+            <class name="tests.day03.C07_ParalelTest"></class>
+        </classes>
+        
+    </test>
+    
+    
+</suite>

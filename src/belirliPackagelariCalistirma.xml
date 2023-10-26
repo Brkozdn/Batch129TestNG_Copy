@@ -15,24 +15,53 @@ SORU: day02 package'ını ve
 
 
 
+<suite name="belirli packagelari calistirma">
 
-<suite name="istenen packagelari calistirma">
+    <test name="packagelar ve classlar">
 
-
-    <test name="packagelar">
         <packages>
             <package name="tests.day02"></package>
         </packages>
+
+
+        <classes>
+            <class name="tests.day01.C01_Priority"></class>
+        </classes>
+
+    </test>
+
+</suite>
+
+
+
+
+<!--
+<suite name="belirli packagelari calistirma">
+
+
+    <test name="packagelar">
+
+        <packages>
+            <package name="tests.day02"></package>
+        </packages>
+
     </test>
 
 
     
     <test name="classlar">
+
         <classes>
             <class name="tests.day01.C01_Priority"></class>
         </classes>
+
     </test>
-    
-    
 
 </suite>
+ -->
+
+
+
+
+
+

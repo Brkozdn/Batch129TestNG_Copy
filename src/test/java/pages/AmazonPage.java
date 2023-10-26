@@ -30,7 +30,7 @@ public class AmazonPage {
 
 
 
-    // C02_Raporlama LOCATELERİ
+    // C02_DataProvider LOCATELERİ
 
 
     @FindBy(xpath = "//div[@class='a-section a-spacing-small a-spacing-top-small']")

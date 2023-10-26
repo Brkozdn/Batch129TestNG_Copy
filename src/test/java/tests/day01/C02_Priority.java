@@ -1,16 +1,16 @@
 package tests.day01;
 
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class C01_Priority {
+public class C02_Priority {
+
 
     // amazon isimli bir test methodu olusturunuz. Ve amazona gidiniz
     // bestbuy isimli bir test methodu olusturunuz. Ve bestbuy'a gidiniz
@@ -31,7 +31,7 @@ public class C01_Priority {
 
     WebDriver driver;
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -40,21 +40,23 @@ public class C01_Priority {
 
     }
 
-
-
     @Test(priority = -2)
     public void amazon() {
         driver.get("https://www.amazon.com");
     }
 
     @Test
-    public void bestbuy() {driver.get("https://www.bestbuy.com");}
+    public void bestbuy() {
+        driver.get("https://www.bestbuy.com");
+    }
 
 
     @Test(priority = -5)
     public void techproeducation() {
         driver.get("https://www.techproeducation.com");
     }
+
+
 
 
 

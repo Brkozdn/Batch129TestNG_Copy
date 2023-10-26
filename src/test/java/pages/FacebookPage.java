@@ -20,6 +20,8 @@ public class FacebookPage {
     @FindBy(xpath = "//button[@name='login']")
     public WebElement giriYapButonu;
 
-    @FindBy(xpath = "//div[@class='_9ay7']")
-    public WebElement girdiginSifreYanlisYaziElementi;
+    @FindBy(xpath = "//h2[@class='uiHeaderTitle']")
+    public WebElement baskaSekildeTanimlaYaziElementi;
 }
+
+
