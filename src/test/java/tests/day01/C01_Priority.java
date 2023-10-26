@@ -51,10 +51,12 @@ public class C01_Priority {
     public void bestbuy() {driver.get("https://www.bestbuy.com");}
 
 
-    @Test(priority = -5)
+   @Test(priority = -5)
     public void techproeducation() {
         driver.get("https://www.techproeducation.com");
     }
+
+
 
 
 
