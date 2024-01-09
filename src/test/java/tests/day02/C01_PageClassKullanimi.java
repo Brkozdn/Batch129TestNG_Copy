@@ -1,5 +1,6 @@
 package tests.day02;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.TakesScreenshot;
 import pages.AmazonPage;
 import utilities.ConfigReader;
@@ -16,6 +17,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+
 
 public class C01_PageClassKullanimi {
 
@@ -46,6 +48,7 @@ public class C01_PageClassKullanimi {
 
 
 
+
         // ikinci urunun fotografını cekin
 
         LocalDateTime date = LocalDateTime.now();
@@ -58,7 +61,6 @@ public class C01_PageClassKullanimi {
         File gecici = amazonPage.ikinciUrun.getScreenshotAs(OutputType.FILE);
 
         FileUtils.copyFile(gecici,kayit);
-
 
 
 

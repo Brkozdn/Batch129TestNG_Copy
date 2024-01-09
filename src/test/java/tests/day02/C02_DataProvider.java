@@ -10,17 +10,15 @@ import utilities.Driver;
 
 public class C02_DataProvider {
 
+  @DataProvider
+  public static Object[][] AranacakKelimeler() {
 
-    @DataProvider
-    public static Object[][] AranacakKelimeler() {
+      // DataProvider BİZE İKİ KATLI BİR ARRAY DONDURECEK
+      // DataProvider'ın DONDURECEGİ VERİLERİ OLSTURALIM
 
-        // DataProvider BİZE İKİ KATLI BİR ARRAY DONDURECEK
-        // DataProvider'ın DONDURECEGİ VERİLERİ OLSTURALIM
+      return new Object[][]{{"Nutella"},{"Java"},{"cigdem"},{"Netherlands"}};
 
-        return new Object[][]{{"Nutella"},{"Java"},{"cigdem"},{"Netherlands"}};
-
-    }
-
+  }
 
     // amazon sayfasına gidelim
     // Nutella, Java, cigdem ve Netherlands icin arama yapalım
